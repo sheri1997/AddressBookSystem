@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 namespace AddressBookSystem
 {
     class Program//Address Book Main Class
@@ -39,6 +40,25 @@ namespace AddressBookSystem
             Console.WriteLine("Zip Code = " + person.ZipCode);
             Console.WriteLine("Phone Number = " + person.PhoneNumber);
             Console.WriteLine("Email Id = " + person.EmailId);
+        }
+        private static void Delete()
+        {
+            Console.WriteLine("Enter the first Name of the Person Which you want to remove");
+            string Name = Console.ReadLine();
+            Person person = People.FirstOrDefault(x => x.FirstName.ToLower() == Name.ToLower());
+            if(person==null)
+            {
+                Console.WriteLine("Person Not Found");
+                Console.ReadKey();
+                return;
+            }
+            Console.WriteLine("Person Found");
+            if(Console.ReadKey().Key==ConsoleKey.Y)
+            {
+                People.Remove(person);
+                Console.WriteLine("Person Removed");
+                Console.ReadKey();
+            }
         }
     }
 }
