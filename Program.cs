@@ -9,7 +9,7 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
         }
-        private static void NewPerson()//method which wiil hold the Contact Details of a Person.
+        private static void NewPerson()//this method will be used a new person in the address book.
         {
             Person person = new Person();//OOPS Concept to manage relationship between Percon Class and main Class
             Console.WriteLine("Please Enter the Frist Name of the Person");
