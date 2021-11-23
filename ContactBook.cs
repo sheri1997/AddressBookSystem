@@ -88,5 +88,27 @@ namespace AddressBookSystem
                 return null;
             }
         }
+        public static Person searchPeople(List<Person>people,string Name)
+        {
+            var peopleName = people.Find(p => p.FirstName == Name);//this lambda function will find the name in the whole Person List.
+            try
+            {
+                if(peopleName==null)//if contact is not present
+                {
+                    Console.WriteLine("Contact is Not Present"+peopleName.FirstName);
+                    return peopleName;
+                }
+                else//if contact is present
+                {
+                    Console.WriteLine("Contact is Present" + peopleName.FirstName);
+                    return peopleName;
+                }
+            }
+            catch(Exception ex)//since we dont know which exception is present
+            {
+                Console.WriteLine(ex.Message);//will display the message.
+                return null;
+            }
+        }
     }
 }
