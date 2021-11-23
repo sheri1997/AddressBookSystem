@@ -110,5 +110,43 @@ namespace AddressBookSystem
                 return null;
             }
         }
+        public static void searchbyCity()//this method is used to search a person details using city details.
+        {
+            try
+            {
+                Console.WriteLine("Please Enter the City Deatils of the Person");
+                string personCity = Console.ReadLine();//this will read the city from the user.
+                foreach(KeyValuePair<string,List<Person>> keyValuePair in addressBook)//this will iterate through the dictionary
+                {
+                    foreach(KeyValuePair<string,List<Person>> valuePair in addressBook)
+                    {
+                        Console.WriteLine(valuePair.Value);//will print the details if the value is found.
+                    }
+                }
+            }
+            catch(Exception ex)//if the value is not found.
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public static void searchbyState()//this method is used to search a person details using state details.
+        {
+            try
+            {
+                Console.WriteLine("Please Enter the City Deatils of the Person");
+                string personCity = Console.ReadLine();//this will read the state from the user.
+                foreach (KeyValuePair<string, List<Person>> keyValuePair in addressBook)//this will iterate through the dictionary
+                {
+                    foreach (KeyValuePair<string, List<Person>> valuePair in addressBook)
+                    {
+                        Console.WriteLine(valuePair.Value);//will print the details if the value is found.
+                    }
+                }
+            }
+            catch (Exception ex)//if the value is not found.
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
