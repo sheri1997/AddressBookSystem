@@ -66,5 +66,27 @@ namespace AddressBookSystem
                 Console.ReadKey();
             }
         }
+        public static Person equalPerson(List<Person> people,string Name)//this method is used to find the duplicate contact is present or not.
+        {
+            try
+            {
+                var contactName = people.Find(p => p.FirstName == Name);//using lambda function to find the name of the contact in the list.
+                if(contactName==null)//if the duplicate contact is not found
+                {
+                    Console.WriteLine("Duplicate Contact is Not Found");
+                    return null;
+                }
+                else//if the duplicate contact is found
+                {
+                    Console.WriteLine("Duplicate Contact is Found");
+                    return contactName;
+                }
+            }
+            catch(Exception ex)//since we dont know which exception is going to be found.
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }
