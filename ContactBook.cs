@@ -148,5 +148,29 @@ namespace AddressBookSystem
                 Console.WriteLine(ex.Message);
             }
         }
+        public static void gettingCity()
+        {
+            foreach (KeyValuePair<string, List<Person>> keyValuePair in addressBook)
+            {
+                Person person = new Person();//Person class object is being created.
+                People.Add(person);//this will add the Person class object to the dictionary.
+                foreach(string city in person.City)//this will iterate through the city details.
+                {
+                    city.Add(city);
+                }
+            }
+        }
+        public static void gettingState()
+        {
+            foreach (KeyValuePair<string, List<Person>> keyValuePair in addressBook)
+            {
+                Person person = new Person();//Person class object is being created.
+                People.Add(person);//this will add the Person class object to the dictionary.
+                foreach (string state in person.State)//this will iterate through the state details.
+                {
+                    state.Add(state);
+                }
+            }
+        }
     }
 }
