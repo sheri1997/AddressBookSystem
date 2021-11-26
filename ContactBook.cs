@@ -34,6 +34,11 @@ namespace AddressBookSystem
             Console.WriteLine("Please Enter the Email Id of the Person");
             person.EmailId = Console.ReadLine();
             People.Add(person);//This will Add the details of the person in the List.
+            var newDetails = addressBook.OrderBy(x => x.Value);//used lambda expression.
+            foreach(var cont in newDetails)
+            {
+                Console.WriteLine(cont.Value);
+            }
             return person;
         }
         public static void Display(Person person)//method to deisplay the details of the array
